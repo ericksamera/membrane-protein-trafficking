@@ -1,0 +1,16 @@
+run_id: "001"
+stage: "membrane"
+versioning: true
+
+input:
+  images:
+    - data/mutant.tif
+    - data/wt.tif
+
+scoring:
+  output_dir: outputs/
+  include_overlays: true
+
+provenance:
+  parent_stage: segmentation
+  parent_run_id: "001"

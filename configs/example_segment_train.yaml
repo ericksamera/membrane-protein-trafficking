@@ -1,0 +1,29 @@
+run_id: "001"
+stage: "segmentation"
+versioning: true
+
+input:
+  features_csv: outputs/001/01_segmentation/features.csv
+  labels_column: label
+
+model:
+  type: RandomForestClassifier
+  params:
+    n_estimators: 500
+    random_state: 42
+  cross_validation:
+    enabled: true
+    folds: 5
+    stratify: true
+    select_by: "auc"
+
+scoring:
+  threshold: 0.5
+  output_dir: outputs/
+  include_overlays: false
+
+provenance:
+  track_hashes: false
+  parent_stage: null
+  parent_run_id: null
+  parent_version: null

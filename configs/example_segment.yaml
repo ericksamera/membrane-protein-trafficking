@@ -1,0 +1,12 @@
+# configs/segment.yaml
+run_id: "001"
+stage: "segment"
+versioning: true
+
+input:
+  images:
+    - data/mutant.tif
+    - data/wt.tif
+
+scoring:
+  output_dir: outputs
