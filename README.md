@@ -41,7 +41,7 @@ Each stage filters for high-confidence cells, passing only those to the next sta
 Clone the repository and set up a Python 3.8+ environment:
 
 ```bash
-git clone https://github.com/your-org/membrane-protein-trafficking.git
+git clone https://github.com/ericksamera/membrane-protein-trafficking.git
 cd membrane-protein-trafficking
 pip install -r requirements.txt
 ```
@@ -70,7 +70,7 @@ Images are specified via YAML config files.
 All pipeline stages are executed through the centralized CLI:
 
 ```bash
-python pipeline.py <command> --config <path/to/config.yaml>
+python traffick_fluo.py <command> --config <path/to/config.yaml>
 ```
 
 ### Available Commands
@@ -84,10 +84,10 @@ python pipeline.py <command> --config <path/to/config.yaml>
 ### Example Commands
 
 ```bash
-python pipeline.py segment --config configs/segment.yaml
-python pipeline.py prepare --config configs/membrane.yaml
-python pipeline.py train --config configs/membrane.yaml
-python pipeline.py score --config configs/transfection.yaml
+python traffick_fluo.py segment --config configs/segment.yaml
+python traffick_fluo.py prepare --config configs/membrane.yaml
+python traffick_fluo.py train --config configs/membrane.yaml
+python traffick_fluo.py score --config configs/transfection.yaml
 ```
 
 Each command reads a structured YAML config and saves outputs under a versioned hierarchy.
